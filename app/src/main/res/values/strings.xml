@@ -2,4 +2,8 @@
     <string name="app_name">Jus\'te a cote</string>
     <string name="command">Commander</string>
     <string name="recap">Récapitulatif</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="mot_de_passe">Mot de Passe</string>
+    <string name="login">Login</string>
 </resources>
