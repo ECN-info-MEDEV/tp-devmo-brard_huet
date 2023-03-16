@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Jus\'te a cote</string>
+    <string name="command">Commander</string>
+    <string name="recap">Récapitulatif</string>
 </resources>
