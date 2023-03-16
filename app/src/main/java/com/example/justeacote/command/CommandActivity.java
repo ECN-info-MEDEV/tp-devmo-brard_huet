@@ -21,7 +21,7 @@ public class CommandActivity extends AppCompatActivity {
 
         // Recycler View
         mCommandRecyclerView = findViewById(R.id.recyclerView);
-        adapter = new CommandAdapter(new LinkedList<>());
+        adapter = new CommandAdapter(new LinkedList<>(), this);
         mCommandRecyclerView.setHasFixedSize(true);
         mCommandRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mCommandRecyclerView.setAdapter(adapter);
@@ -29,7 +29,7 @@ public class CommandActivity extends AppCompatActivity {
 
     }
     public int getCommandImageFromLabel(String pictureLabel) {
-        int id = getResources().getIdentifier(pictureLabel, "drawable", getPackageName());
+        int id = this.getResources().getIdentifier(pictureLabel, "drawable", this.getPackageName());
         if (id == 0) {
             id = R.drawable.juspomme;
         }

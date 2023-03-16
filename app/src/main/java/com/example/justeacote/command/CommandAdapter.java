@@ -1,5 +1,6 @@
 package com.example.justeacote.command;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.justeacote.R;
@@ -17,9 +19,11 @@ import java.util.List;
 
 public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.ViewHolder>{
     private List<CommandData> commandData;
+    private CommandActivity activity;
 
-    public CommandAdapter(List<CommandData> commandData) {
+    public CommandAdapter(List<CommandData> commandData, CommandActivity activity) {
         this.commandData = commandData;
+        this.activity = activity;
     }
 
     /**
@@ -54,7 +58,7 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.ViewHold
         holder.commandDescriptionTextView.setText(data.getCommandDescription()); // Le nom de la commande
         holder.commandNameTextView.setText(data.getCommandName()); // Le nom de la commande
         holder.commandLocalisationTextView.setText(data.getCommandLocalisation()); // Le nom de la commande
-        holder.commandImgView.setImageResource(data.getCommandImgId()); // L'image de la commande
+        holder.commandImgView.setImageResource(activity.getCommandImageFromLabel(data.getCommandImgId())); // L'image de la commande
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
