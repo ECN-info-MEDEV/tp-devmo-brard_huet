@@ -1,8 +1,11 @@
 package com.example.justeacote.command;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.util.Objects;
 
 @Entity(tableName = "command")
 public class CommandData {
@@ -67,5 +70,23 @@ public class CommandData {
 
     public void setCommandLocalisation(@NonNull String commandLocalisation) {
         this.commandLocalisation = commandLocalisation;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CommandData other = (CommandData) obj;
+        if (Objects.equals(this.id, other.getId()) && Objects.equals(this.commandDescription, other.getCommandDescription()) && Objects.equals(this.commandImgId, other.getCommandImgId()) && Objects.equals(this.commandLocalisation, other.getCommandLocalisation()) && Objects.equals(this.commandName, getCommandName())) {
+            return true;
+        }
+        return false;
     }
 }
