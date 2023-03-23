@@ -38,7 +38,7 @@ public class CommandViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 // Permet d'afficher un message à chaque fois que l'utilisateur clique sur un élément de la liste déroulante
-                Toast.makeText(view.getContext(), "Click sur commande : "+data.getCommandName(), Toast.LENGTH_SHORT).show();
+                activity.goToCommand(data.getId());
             }
         });
 

@@ -16,7 +16,8 @@ public class ProducteurViewModel extends AndroidViewModel {
         mAllProducteurs = mRepository.getAllProducteurs();
     }
 
-    LiveData<List<ProducteurData>> getAllProducteurs() {return mAllProducteurs;}
+    public LiveData<List<ProducteurData>> getAllProducteurs() {return mAllProducteurs;}
+    public LiveData<List<ProducteurData>> getProducteurByID(int id) {return mRepository.getProducteurById(id);}
 
     public void insert(ProducteurData producteur) { mRepository.insertProducteur(producteur); }
 }

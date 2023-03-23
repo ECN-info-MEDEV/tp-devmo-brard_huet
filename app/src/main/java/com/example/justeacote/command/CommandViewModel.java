@@ -16,7 +16,9 @@ public class CommandViewModel extends AndroidViewModel {
             mAllCommands = mRepository.getAllCommands();
     }
 
-    LiveData<List<CommandData>> getAllCommands() {return mAllCommands;}
+    public LiveData<List<CommandData>> getAllCommands() {return mAllCommands;}
+
+    public LiveData<List<CommandData>> getCommandById(int id) {return mRepository.getCommandById(id);}
 
     public void insert(CommandData command) { mRepository.insert(command); }
 }

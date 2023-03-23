@@ -19,6 +19,10 @@ public class CommandRepository {
     LiveData<List<CommandData>> getAllCommands() {
         return mAllCommands;
     }
+    LiveData<List<CommandData>> getCommandById(int id) {
+        return mCommandDao.getCommandById(id);
+    }
+
 
     void insert(CommandData commandData) {
         CommandRoomDatabase.databaseWriteExecutor.execute(() -> {
