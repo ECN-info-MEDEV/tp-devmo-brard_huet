@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.justeacote.R;
@@ -15,7 +14,7 @@ import com.example.justeacote.ReserveActivity;
 public class CommandActivity extends AppCompatActivity {
     private CommandAdapter adapter;
     private RecyclerView mCommandRecyclerView;
-    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
+    public static final int NEW_USER_ACTIVITY_REQUEST_CODE = 1;
     private CommandViewModel mCommandViewModel;
 
     @Override

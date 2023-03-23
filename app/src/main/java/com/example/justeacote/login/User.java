@@ -16,10 +16,9 @@ public class User {
     @NonNull
     private String password;
 
-    public User(){
-        id = 0;
-        username = "";
-        password = "";
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
     }
 
     public int getId() {

@@ -8,19 +8,23 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.justeacote.login.User;
+import com.example.justeacote.login.UserDao;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {CommandData.class, ProducteurData.class}, version = 1, exportSchema = false)
+@Database(entities = {CommandData.class, ProducteurData.class, User.class}, version = 1, exportSchema = false)
 public abstract class CommandRoomDatabase extends RoomDatabase {
     public abstract CommandDao commandDao();
+    public abstract UserDao userDao();
 
     private static volatile CommandRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
 
-    static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static CommandRoomDatabase getDatabase(final Context context) {
+    public static CommandRoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (CommandRoomDatabase.class) {
                 if (INSTANCE == null) {
