@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.justeacote.command.CommandData;
 import com.example.justeacote.command.CommandViewModel;
@@ -65,5 +67,10 @@ public class ReserveActivity extends AppCompatActivity {
             id = R.drawable.farmer3;
         }
         return id;
+    }
+
+    public void reserve(View view) {
+        Toast.makeText(this, "Jus réservé ! ", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

@@ -6,6 +6,7 @@
     <string name="litres">Litres</string>
     <string name="reserve">Je souhaite réserver :</string>
     <string name="litres_int">14</string>
+    <string name="me">A propos de moi : </string>
     <string name="register">Register</string>
     <string name="username">Username</string>
     <string name="password">Password</string>

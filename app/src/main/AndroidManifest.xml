@@ -15,7 +15,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ProducteurActivity"
+            android:name=".ReserveActivity"
             android:exported="false" />
         <activity
             android:name=".command.CommandActivity"

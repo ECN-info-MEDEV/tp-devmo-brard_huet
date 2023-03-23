@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="24dp"
-        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/producteurAvatar"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/first_names" />
@@ -32,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
-        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/firstName"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/last_names" />
@@ -42,21 +42,21 @@
         android:id="@+id/descriptionProd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/producteurAvatar"
-        app:layout_constraintTop_toBottomOf="@+id/firstName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:text="@tools:sample/lorem[10]" />
 
     <TextView
         android:id="@+id/descriptionCommand"
-        android:layout_width="356dp"
-        android:layout_height="387dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reserveCommandName"
@@ -67,6 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/command"
+        android:onClick="reserve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -119,10 +120,21 @@
         android:id="@+id/reserveCommandName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/producteurAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionProd"
         tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/me"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/producteurAvatar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
