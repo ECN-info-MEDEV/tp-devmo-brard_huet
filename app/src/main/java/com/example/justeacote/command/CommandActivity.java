@@ -36,6 +36,12 @@ public class CommandActivity extends AppCompatActivity {
         mCommandViewModel.getAllCommands().observe(this, commands -> {
             adapter.submitList(commands);
         });
+
+        ProducteurViewModel mProducteurViewModel = new ViewModelProvider(this).get(ProducteurViewModel.class);
+
+        mProducteurViewModel.getAllProducteurs().observe(this, producteurs -> {
+            System.out.println(producteurs);
+        });
     }
 
     public int getCommandImageFromLabel(String pictureLabel) {

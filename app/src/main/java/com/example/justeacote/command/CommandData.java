@@ -20,12 +20,15 @@ public class CommandData {
     @NonNull
     private String commandLocalisation;
 
-    public CommandData(int id,@NonNull String commandName,@NonNull String commandImgId,@NonNull String commandDescription,@NonNull String commandLocalisation) {
+    private int producteur;
+
+    public CommandData(int id,@NonNull String commandName,@NonNull String commandImgId,@NonNull String commandDescription,@NonNull String commandLocalisation, int producteur) {
         this.id = id;
         this.commandName = commandName;
         this.commandImgId = commandImgId;
         this.commandDescription = commandDescription;
         this.commandLocalisation = commandLocalisation;
+        this.producteur = producteur;
     }
 
     public int getId() {
@@ -72,6 +75,14 @@ public class CommandData {
         this.commandLocalisation = commandLocalisation;
     }
 
+    public int getProducteur() {
+        return producteur;
+    }
+
+    public void setProducteur(int producteur) {
+        this.producteur = producteur;
+    }
+
     @Override
     public boolean equals(@Nullable Object obj) {
         if (this == obj) {
@@ -84,7 +95,22 @@ public class CommandData {
             return false;
         }
         final CommandData other = (CommandData) obj;
-        if (Objects.equals(this.id, other.getId()) && Objects.equals(this.commandDescription, other.getCommandDescription()) && Objects.equals(this.commandImgId, other.getCommandImgId()) && Objects.equals(this.commandLocalisation, other.getCommandLocalisation()) && Objects.equals(this.commandName, getCommandName())) {
+        if (!Objects.equals(this.id, other.getId())) {
+            return false;
+        }
+        if (!Objects.equals(this.commandDescription, other.getCommandDescription())) {
+            return false;
+        }
+        if (!Objects.equals(this.commandImgId, other.getCommandImgId())) {
+            return false;
+        }
+        if (!Objects.equals(this.commandLocalisation, other.getCommandLocalisation())) {
+            return false;
+        }
+        if (!Objects.equals(this.commandName, getCommandName())) {
+            return false;
+        }
+        if (this.producteur == other.getProducteur()) {
             return true;
         }
         return false;

@@ -1,8 +1,11 @@
 package com.example.justeacote.command;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.util.Objects;
 
 @Entity(tableName = "producteur")
 public class ProducteurData {
@@ -55,5 +58,32 @@ public class ProducteurData {
 
     public void setDescription(@NonNull String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        ProducteurData other = (ProducteurData) obj;
+        if (!Objects.equals(this.id, other.getId())) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.getDescription())) {
+            return false;
+        }
+        if (!Objects.equals(this.nom, other.getNom())) {
+            return false;
+        }
+        if (!Objects.equals(this.prenom, other.getPrenom())) {
+            return false;
+        }
+        return true;
     }
 }
