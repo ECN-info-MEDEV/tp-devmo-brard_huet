@@ -16,8 +16,11 @@ public class ProducteurRepository {
         mAllProducteurs = mCommandDao.getAlphabetizedProducteurs();
     }
 
-    LiveData<List<ProducteurData>> getAllProducteurs() {
+    public LiveData<List<ProducteurData>> getAllProducteurs() {
         return mAllProducteurs;
+    }
+    public LiveData<List<ProducteurData>> getProducteurById(int id) {
+        return mCommandDao.getProducteurById(id);
     }
 
     void insertProducteur(ProducteurData producteurData) {

@@ -16,9 +16,12 @@ public class ProducteurData {
     @NonNull
     private String prenom;
     @NonNull
+    private String producteurImgId;
+    @NonNull
     private String description;
 
-    public ProducteurData(int id, @NonNull String nom, @NonNull String prenom, @NonNull String description) {
+    public ProducteurData(int id,@NonNull String producteurImgId, @NonNull String nom, @NonNull String prenom, @NonNull String description) {
+        this.producteurImgId = producteurImgId;
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -31,6 +34,15 @@ public class ProducteurData {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @NonNull
+    public String getProducteurImgId() {
+        return producteurImgId;
+    }
+
+    public void setProducteurImgId(@NonNull String producteurImgId) {
+        this.producteurImgId = producteurImgId;
     }
 
     @NonNull
@@ -82,6 +94,9 @@ public class ProducteurData {
             return false;
         }
         if (!Objects.equals(this.prenom, other.getPrenom())) {
+            return false;
+        }
+        if (!Objects.equals(this.producteurImgId, other.getProducteurImgId())) {
             return false;
         }
         return true;

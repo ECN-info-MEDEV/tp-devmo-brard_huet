@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.justeacote.R;
+import com.example.justeacote.ReserveActivity;
 
 
 public class CommandActivity extends AppCompatActivity {
@@ -42,6 +43,12 @@ public class CommandActivity extends AppCompatActivity {
         mProducteurViewModel.getAllProducteurs().observe(this, producteurs -> {
             System.out.println(producteurs);
         });
+    }
+
+    public void goToCommand(int commandId) {
+        Intent intent = new Intent(CommandActivity.this, ReserveActivity.class);
+        intent.putExtra("commandId", commandId);
+        startActivity(intent);
     }
 
     public int getCommandImageFromLabel(String pictureLabel) {

@@ -2,4 +2,8 @@
     <string name="app_name">Jus\'te a cote</string>
     <string name="command">Commander</string>
     <string name="recap">Récapitulatif</string>
+    <string name="commander">Commander</string>
+    <string name="litres">Litres</string>
+    <string name="reserve">Je souhaite réserver :</string>
+    <string name="litres_int">14</string>
 </resources>
