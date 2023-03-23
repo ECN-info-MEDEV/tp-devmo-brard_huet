@@ -6,4 +6,9 @@
     <string name="litres">Litres</string>
     <string name="reserve">Je souhaite réserver :</string>
     <string name="litres_int">14</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
