@@ -15,6 +15,9 @@ import com.example.justeacote.command.CommandActivity;
 import com.example.justeacote.login.User;
 import com.example.justeacote.login.UserViewModel;
 
+/**
+ * Activité principale de l'application elle gère la connexion de l'utilisateur
+ */
 public class LoginActivity extends AppCompatActivity {
 
     public static final int NEW_USER_ACTIVITY_REQUEST_CODE = 1;
@@ -23,6 +26,13 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private UserViewModel userViewModel;
 
+    /**
+     * La création de cette l'activité entraine la création de l'UI associé
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         register.setOnClickListener(v -> registerAction());
     }
 
+    /**
+     * Fonction servant à vérifier la connexion après que l'utilisateur ait rentré ses informations
+     */
     public void verifConnexion(){
         if (!(TextUtils.isEmpty(username.getText()) || TextUtils.isEmpty(password.getText()))) {
             String name = username.getText().toString();
@@ -60,11 +73,25 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Fonction servant à lancer une création de compte utilisateur
+     */
     public void registerAction(){
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivityForResult(intent, NEW_USER_ACTIVITY_REQUEST_CODE);
     }
 
+    /**
+     * Cette fonction gère le retour de l'appel à la création de compte
+     *
+     * @param requestCode The integer request code originally supplied to
+     *                    startActivityForResult(), allowing you to identify who this
+     *                    result came from.
+     * @param resultCode The integer result code returned by the child activity
+     *                   through its setResult().
+     * @param data An Intent, which can return result data to the caller
+     *               (various data can be attached to Intent "extras").
+     */
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
