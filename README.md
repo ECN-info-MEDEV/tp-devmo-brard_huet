@@ -1,11 +1,11 @@
 # Jus'te à coté : application mobile Smartphone
 
-Nous formons une équi de deux développeurs : Arthur Huet et Tristan Brard.
+Nous formons une équipe de deux développeurs : Arthur Huet et Tristan Brard.
 
 Nous avons créé un prototype d'application pour le projet Jus'te à coté
 
 ## A propos de Jus'te à coté
-Jus'te à coté est une application qui permet de promouvoir le commerce de procimité de Nantes et de ses environs pour les jus de fruit.
+Jus'te à coté est une application qui permet de promouvoir le commerce de proximité de Nantes et de ses environs pour les jus de fruit.
 Ainsi, des utilisateurs peuvent commander des jus de fruit provenant à coté de chez eux grace à cette application.
 Les différentes annonces sont postées directement par les producteurs locaux
 
